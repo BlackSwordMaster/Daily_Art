@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ========== META & TITLE ========== -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Daily Art Quote</title>
+
+  <!-- ========== STYLES ========== -->
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- ========== MAIN LAYOUT WRAPPER ========== -->
+  <div class="quote-layout">
+
+    <!-- ========== LEFT: IMAGE SECTION ========== -->
+    <div class="quote-image-section">
+      <div class="quote-image-wrapper">
+        <img class="quote-image" src="" alt="Artist portrait" />
+
+        <!-- Artwork Meta: Medium & Year -->
+        <div class="quote-info-row">
+          <div class="quote-medium"></div>
+         <div class="quote-piece-year"></div>
+      </div>
+
+      <!-- Extra Artwork Info -->
+      <div class="quote-art-info"></div>
+    </div>
+  </div>
+    
+    <!-- ========== RIGHT: QUOTE & DETAILS ========== -->
+    <div class="quote-text-section">
+      
+     <!-- ========== META BAR: DATE & SHARE BUTTON ========== -->
+      <div class="quote-meta-bar">
+        <div class="meta-left">
+          <span class="quote-date"></span>
+        </div>
+        <button class="share-quote-btn" title="Share this quote">
+          <svg xmlns="http://www.w3.org/2000/svg" class="share-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="18" cy="5" r="3"/>
+            <circle cx="6" cy="12" r="3"/>
+            <circle cx="18" cy="19" r="3"/>
+            <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/>
+            <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+          </svg>
+        </button>
+      </div>
+     
+      <!-- ========== QUOTE CONTENT ========== -->
+      <div class="quote-content">Loading quote...</div>
+
+      <!-- ========== AUTHOR & BIO ========== -->
+      <div class="quote-author">
+        <img class="author-photo" src="" alt="Author photo" />
+        <span class="author-name"></span>
+      </div>
+      <div class="quote-bio"></div>
+
+      <!-- ========== CONTACT ========== -->
+      <div class="quote-contact"></div>
+
+      <!-- ========== SHARE FEEDBACK MESSAGE ========== -->
+      <div class="share-status"></div>
+    </div>
+  </div>
+
+  <!-- ========== JAVASCRIPT ========== -->
+  <script src="main.js"></script>
+</body>
+</html>
