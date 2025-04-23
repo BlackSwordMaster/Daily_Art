@@ -1,41 +1,29 @@
-/* ====================================================
- BASE STYLES
-==================================================== */
+/* BASE STYLES */
 body {
   margin: 0;
   font-family: 'Gloria Hallelujah', cursive;
   background: #978b6f;
   color: #ffffff;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
-
-/* ====================================================
- MAIN LAYOUT
-==================================================== */
+/* MAIN LAYOUT */
 .quote-layout {
   display: flex;
+  flex-direction: column;
   width: 100%;
-  height: 100vh;
+  height: auto;
 }
 
-
-/* ====================================================
-LEFT SECTION — IMAGE + ART INFO
-==================================================== */
+/* IMAGE SECTION */
 .quote-image-section {
-  width: 70%;
-  height: 100%;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  background: #978b6f;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #978b6f;
-  padding: 20px;
-  box-sizing: border-box;
-  overflow: visible;
+  margin-bottom: 30px;
 }
 
 .quote-image-wrapper {
@@ -50,12 +38,12 @@ LEFT SECTION — IMAGE + ART INFO
   height: 60%;
   max-height: 80vh;
   margin: 10px;
-  box-sizing: border-box;
   border: 4px solid #22b81f;
   object-fit: contain;
   box-shadow: 0 0 20px rgba(34, 184, 31, 0.3);
 }
 
+/* ART INFO */
 .quote-info-row {
   display: flex;
   align-items: center;
@@ -67,7 +55,6 @@ LEFT SECTION — IMAGE + ART INFO
 
 .quote-medium,
 .quote-piece-year {
-  display: inline-block;
   background-color: #22b81f;
   color: #fff;
   padding: 6px 12px;
@@ -75,7 +62,6 @@ LEFT SECTION — IMAGE + ART INFO
   font-size: 16px;
   box-shadow: 0 2px 6px rgba(34, 184, 31, 0.2);
   white-space: nowrap;
-  max-width: fit-content;
   margin-top: 12px;
   margin-bottom: 10px;
 }
@@ -89,23 +75,15 @@ LEFT SECTION — IMAGE + ART INFO
   color: #ffffff;
 }
 
-
-/* ====================================================
-RIGHT SECTION — TEXT QUOTE + META
-==================================================== */
+/* TEXT SECTION */
 .quote-text-section {
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  width: 100%;
   padding: 40px;
   box-sizing: border-box;
+  margin-bottom: 30px;
 }
 
-
-/* ----------------------------------------------------
-META BAR (DATE + SHARE BUTTON)
----------------------------------------------------- */
+/* META BAR */
 .quote-meta-bar {
   display: flex;
   align-items: center;
@@ -122,7 +100,6 @@ META BAR (DATE + SHARE BUTTON)
 }
 
 .quote-date {
-  display: inline-block;
   background-color: #22b81f;
   color: #fff;
   padding: 6px 12px;
@@ -130,17 +107,12 @@ META BAR (DATE + SHARE BUTTON)
   font-size: 16px;
   box-shadow: 0 2px 6px rgba(34, 184, 31, 0.2);
   white-space: nowrap;
-  max-width: fit-content;
   margin-top: 12px;
   margin-bottom: 10px;
 }
 
-
-/* ----------------------------------------------------
-QUOTE CONTENT + AUTHOR + BIO
----------------------------------------------------- */
+/* QUOTE CONTENT + AUTHOR + BIO */
 .quote-content {
-  font-family: 'Gloria Hallelujah', cursive;
   font-weight: bold;
   font-size: 42px;
   margin-bottom: 30px;
@@ -172,14 +144,27 @@ QUOTE CONTENT + AUTHOR + BIO
 
 .quote-bio {
   font-size: 18px;
-  color: #ffffff;
   line-height: 1.6;
+  color: #ffffff;
 }
 
+/* CONTACT */
+.quote-contact {
+  margin-top: 20px;
+  font-size: 16px;
+  color: #fff;
+}
 
-/* ----------------------------------------------------
-SHARE BUTTON + FEEDBACK
----------------------------------------------------- */
+.quote-contact a {
+  color: #22b81f;
+  text-decoration: none;
+}
+
+.quote-contact a:hover {
+  text-decoration: underline;
+}
+
+/* SHARE BUTTON + STATUS */
 .share-quote-btn {
   background: none;
   border: none;
@@ -206,35 +191,14 @@ SHARE BUTTON + FEEDBACK
   color: #ccc;
 }
 
-
-/* ----------------------------------------------------
-Contact
----------------------------------------------------- */
-.quote-contact {
-  margin-top: 20px;
-  font-size: 16px;
-  color: #fff;
+/* SCROLL FADE ANIMATION */
+.fade-init {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
-.quote-contact a {
-  color: #22b81f;
-  text-decoration: none;
-}
-
-.quote-contact a:hover {
-  text-decoration: underline;
-}
-
-
-/* ====================================================
-ANIMATIONS
-==================================================== */
-.quote-text-section,
-.quote-image {
-  animation: fadeIn 1.5s ease-in;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+.fade-in {
+  opacity: 1;
+  transform: translateY(0);
 }

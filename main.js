@@ -2,68 +2,107 @@
 // Art Quote of the Day Script
 // ===============================
 
-// Holds the selected quote object (used globally for sharing)
 let quote = null;
 
-// ===============================
-// Fetch Quotes from JSON File
-// ===============================
 fetch('quotes.json')
   .then(response => response.json())
   .then(quotes => {
-    // Get the current date as a unique string
-    const today = new Date().toDateString();
+    /* // ✅ Replace this with any date you want to test
+    const testDate = new Date('2025-03-21'); // 👈 change date here
 
-    // Format the date for display (e.g., "Monday, March 25, 2025")
+    const today = testDate.toDateString();
+
+    const displayDate = testDate.toLocaleDateString(undefined, {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    });*/
+    const today = new Date().toDateString();
     const displayDate = new Date().toLocaleDateString(undefined, {
       weekday: 'long',
       year: 'numeric',
       month: 'long',
       day: 'numeric'
     });
-
-    // Inject the formatted date into the DOM
     document.querySelector('.quote-date').textContent = displayDate;
 
-    // Create a hash from the date to select a quote
     const hash = [...today].reduce((sum, char) => sum + char.charCodeAt(0), 0);
     const index = hash % quotes.length;
-    const quote = quotes[index];
+    quote = quotes[index];
 
-    // Set main quote text
-    document.querySelector('.quote-content').textContent = quote.content;
+    //quote/statment
+    const contentEl = document.querySelector('.quote-content');
+    if (quote.content) {
+      contentEl.textContent = `Statment: ${quote.content}`;
+      contentEl.style.display = 'block';
+    } else {
+      contentEl.style.display = 'none';
+    }
 
-    // Set author image and name
+    // Author image and name
     const authorImg = document.querySelector('.author-photo');
     authorImg.src = quote.AuthorImage;
     authorImg.alt = quote.author;
     document.querySelector('.author-name').textContent = quote.author;
 
-    // Set author bio
-    document.querySelector('.quote-bio').textContent = `- ${quote.bio}`;
+    // Author bio
+    const bio = document.querySelector('.quote-bio');
+    bio.textContent = quote.bio ? `Bio: ${quote.bio}` : '';
+    bio.style.display = quote.bio ? 'block' : 'none';
 
-    // Set artwork info
-    document.querySelector('.quote-art-info').textContent = quote.artInfo || '';
-    document.querySelector('.quote-medium').textContent = `Medium: ${quote.medium}`;
-    document.querySelector('.quote-piece-year').textContent =
-      quote.piece && quote.year
-        ? `“${quote.piece}” (${quote.year})`
-        : quote.piece
-        ? `“${quote.piece}”`
-        : '';
-
-    // ✅ Set artwork image
+    // Artwork image
     const img = document.querySelector('.quote-image');
     img.src = quote.ArtImage;
     img.alt = quote.author;
 
-    // ✅ Display artist email if available
-    const contactEl = document.querySelector('.quote-contact');
-    if (quote.contact?.email) {
-      contactEl.innerHTML = `Email: <a href="mailto:${quote.contact.email}">${quote.contact.email}</a>`;
+    // Medium
+    const mediumEl = document.querySelector('.quote-medium');
+    if (quote.medium) {
+      mediumEl.textContent = `Medium: ${quote.medium}`;
+      mediumEl.style.display = 'inline-block';
     } else {
-      contactEl.innerHTML = '';
+      mediumEl.style.display = 'none';
     }
+
+    // Piece and year
+    const pieceYearEl = document.querySelector('.quote-piece-year');
+    if (quote.piece && quote.year) {
+      pieceYearEl.textContent = `Artwork: “${quote.piece}” (${quote.year})`;
+      pieceYearEl.style.display = 'inline-block';
+    } else if (quote.piece) {
+      pieceYearEl.textContent = `Artwork: “${quote.piece}”`;
+      pieceYearEl.style.display = 'inline-block';
+    } else {
+      pieceYearEl.style.display = 'none';
+    }
+
+    // Art info
+    const artInfoEl = document.querySelector('.quote-art-info');
+    if (quote.artInfo) {
+      artInfoEl.textContent = `Artwork info: ${quote.artInfo}`;
+      artInfoEl.style.display = 'block';
+    } else {
+      artInfoEl.style.display = 'none';
+    }
+
+    // ✅ Contact: Email + Website
+    const contactEl = document.querySelector('.quote-contact');
+    let contactHTML = '';
+
+    if (quote.contact?.email) {
+      contactHTML += `Email: <a href="mailto:${quote.contact.email}">${quote.contact.email}</a>`;
+    }
+
+    if (quote.contact?.website || quote.contact?.Website) {
+      const website = quote.contact.website || quote.contact.Website;
+      if (contactHTML) contactHTML += ' | ';
+      contactHTML += `Website: <a href="${website}" target="_blank">${website}</a>`;
+    }
+
+    contactEl.innerHTML = contactHTML;
+    contactEl.style.display = contactHTML ? 'block' : 'none';
+
   })
   .catch(error => {
     console.error('Failed to load quotes:', error);
@@ -73,20 +112,14 @@ fetch('quotes.json')
 // ===============================
 // Share Button Functionality
 // ===============================
-
-// Get DOM references
 const shareBtn = document.querySelector('.share-quote-btn');
 const shareStatus = document.querySelector('.share-status');
 
-// Add click event for the share button
 shareBtn.addEventListener('click', () => {
-  // Prevent action if quote hasn't loaded yet
   if (!quote) return;
 
-  // Format quote for sharing
   const text = `"${quote.content}" — ${quote.author}`;
 
-  // Try to use Web Share API if available (mobile-friendly)
   if (navigator.share) {
     navigator.share({
       title: 'Art Quote of the Day',
@@ -97,8 +130,6 @@ shareBtn.addEventListener('click', () => {
     }).catch(err => {
       shareStatus.textContent = 'Sharing canceled.';
     });
-
-  // Fallback: copy quote to clipboard
   } else {
     navigator.clipboard.writeText(text)
       .then(() => {
@@ -110,17 +141,23 @@ shareBtn.addEventListener('click', () => {
   }
 });
 
-/* {
-  "content": "" ,
-  "author": "",
-  "ArtImage": "",
-  "AuthorImage": "",
-  "bio": "",
-  "medium": "",
-  "piece": "",
-  "year": "",
-  "artInfo": "",
-  "contact": {
-      "email": ""
-  }
-},*/
+// ===============================
+// Scroll-based fade-in animation
+// ===============================
+const observerOptions = {
+  threshold: 0.1
+};
+
+const observer = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('fade-in');
+      observer.unobserve(entry.target);
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll('.quote-image-section, .quote-text-section').forEach(section => {
+  section.classList.add('fade-init');
+  observer.observe(section);
+});
