@@ -6,7 +6,7 @@ body {
   color: #ffffff;
 }
 
-/* MAIN LAYOUT */
+/* LAYOUT */
 .quote-layout {
   display: flex;
   flex-direction: column;
@@ -14,7 +14,6 @@ body {
   height: auto;
 }
 
-/* IMAGE SECTION */
 .quote-image-section {
   width: 100%;
   padding: 20px;
@@ -26,6 +25,14 @@ body {
   margin-bottom: 30px;
 }
 
+.quote-text-section {
+  width: 100%;
+  padding: 40px;
+  box-sizing: border-box;
+  margin-bottom: 30px;
+}
+
+/* IMAGE + ART INFO */
 .quote-image-wrapper {
   display: flex;
   flex-direction: column;
@@ -43,7 +50,6 @@ body {
   box-shadow: 0 0 20px rgba(34, 184, 31, 0.3);
 }
 
-/* ART INFO */
 .quote-info-row {
   display: flex;
   align-items: center;
@@ -75,15 +81,7 @@ body {
   color: #ffffff;
 }
 
-/* TEXT SECTION */
-.quote-text-section {
-  width: 100%;
-  padding: 40px;
-  box-sizing: border-box;
-  margin-bottom: 30px;
-}
-
-/* META BAR */
+/* META + DATE */
 .quote-meta-bar {
   display: flex;
   align-items: center;
@@ -111,7 +109,7 @@ body {
   margin-bottom: 10px;
 }
 
-/* QUOTE CONTENT + AUTHOR + BIO */
+/* QUOTE TEXT + AUTHOR */
 .quote-content {
   font-weight: bold;
   font-size: 16px;
@@ -148,7 +146,7 @@ body {
   color: #ffffff;
 }
 
-/* CONTACT */
+/* CONTACT INFO */
 .quote-contact {
   margin-top: 20px;
   font-size: 16px;
@@ -164,7 +162,7 @@ body {
   text-decoration: underline;
 }
 
-/* SHARE BUTTON + STATUS */
+/* SHARE BUTTON */
 .share-quote-btn {
   background: none;
   border: none;
@@ -191,7 +189,7 @@ body {
   color: #ccc;
 }
 
-/* SCROLL FADE ANIMATION */
+/* SCROLL ANIMATION */
 .fade-init {
   opacity: 0;
   transform: translateY(40px);
