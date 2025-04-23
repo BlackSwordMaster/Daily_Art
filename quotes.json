@@ -775,16 +775,58 @@
   },
   {
     "content": "",
-    "author":"",
-    "ArtImage":"",
-    "AuthorImage":"",
-    "bio":"",
-    "medium":"",
+    "author":"Oluchi Sandra Nwoko",
+    "ArtImage":"images/acrylic cabbage 4 - Oluchi Nwoko.jpg",
+    "AuthorImage":"images/nwoko-portrait-thumb@2x.jpg",
+    "bio":"Oluchi Sandra Nwoko is a visual artist based in Lagos.She holds a Bachelor’s degree in Fine and Applied Arts from Nnamdi Azikiwe University, Awka (2014).She paints characters inspired by her experiences, using color, facial expressions, and poses to tell stories. Working primarily with acrylics on canvas, her paintings explore themes of everyday life, memories, and time. Drawing from realism and pop art, she blends figuration with bright, contrasting colors and a digital-like aesthetic. Her work has been shown in group exhibitions locally and internationally.",
+    "medium":"Digital media",
+    "piece":"Acrylic cabbage",
+    "year":"",
+    "artInfo":"I keep paint scraped off my palette in small plastic bags and it ends up being shaped into a compact, colourful ball. When cut open, the cross-section looks like this.",
+    "contact": {
+        "email": "oluchisandra3000@gmail.com"
+    }
+  },
+  {
+    "content": "",
+    "author":"Oluchi Sandra Nwoko",
+    "ArtImage":"images/BELIEF III - Oluchi Nwoko.jpg",
+    "AuthorImage":"images/nwoko-portrait-thumb@2x.jpg",
+    "bio":"Oluchi Sandra Nwoko is a visual artist based in Lagos.She holds a Bachelor’s degree in Fine and Applied Arts from Nnamdi Azikiwe University, Awka (2014).She paints characters inspired by her experiences, using color, facial expressions, and poses to tell stories. Working primarily with acrylics on canvas, her paintings explore themes of everyday life, memories, and time. Drawing from realism and pop art, she blends figuration with bright, contrasting colors and a digital-like aesthetic. Her work has been shown in group exhibitions locally and internationally.",
+    "medium":"Digital media",
+    "piece":"Belief III",
+    "year":"",
+    "artInfo":"It feels like my life is at another turning point. I imagine what I would change if I woke up and was nine years old again. But sometimes, we have to believe that the choices we have made so far are the right ones.",
+    "contact": {
+        "email": "oluchisandra3000@gmail.com"
+    }
+  },
+  {
+    "content": "",
+    "author":"JoAnn Telemdschinow",
+    "ArtImage":"images/telemdschinow-imago.jpg",
+    "AuthorImage":"images/telemdshinow-portrait.jpg",
+    "bio":"JoAnn Telemdschinow has always loved and been fascinated by visual art. She received an M.A. in Art History from Rutgers University in 1998, but kept searching for a medium to express her imaginative inclinations. In 2014, she discovered Photoshop Elements and started to create digital collages. Since then, she’s been combining old writing, vintage images and textures to create her unique pieces. Her collages are influenced by her love of the art and architecture of the past, as well as travel, history and mythology. She seeks to make them both visually appealing and expressive of a specific mood or atmosphere. JoAnn has also started taking her own photographs, often of nature and travel scenes. She has displayed her work in galleries and exhibitions in New Jersey and other states, and has won awards in juried shows. She has also sold a number of her pieces to private collectors.",
+    "medium":"digital collage",
     "piece":"",
     "year":"",
-    "artInfo":"",
+    "artInfo":"Imago is a collage with several symbolic elements. The moth is commonly a symbol of the soul. Its attraction to light can be a metaphor for the quest for knowledge. The branch-like forms in the image are early diagrams of nerves. I chose them because of their resemblance to trees, which both raise their branches toward the sky, while also extending their roots into the earth. The word imago can also refer to either the final stage of an insect's metamorphosis, or an ideal mental image of a person.",
     "contact": {
-        "email": ""
+        "website": "https://imaginedpast.weeblysite.com/"
+    }
+  },
+  {
+    "content": "",
+    "author":"Victor Leger",
+    "ArtImage":"images/The Mighty Atom, 19 x 17.jpg",
+    "AuthorImage":"images/leger-portrait-thumb@2x.jpg",
+    "bio":"I have been painting since high school. I devote a good portion of my time to plein air oil painting in a wide variety of sizes, and I prefer painting on panels in order to get finer detail. I enjoy the northwest corner of Connecticut and in the past ten years with a second home on the coast of Maine I have another source of inspiration for paintings.",
+    "medium":"oil on panel",
+    "piece":"",
+    "year":"",
+    "artInfo":"This is one of many autumn tree studies, some of which I eventually paint as larger than life finished paintings. I call them 'treescapes.'",
+    "contact": {
+        "website": "https://www.victorleger.com/"
     }
   }
 ]
